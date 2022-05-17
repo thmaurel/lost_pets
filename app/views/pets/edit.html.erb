@@ -1,0 +1,21 @@
+<h1>Edit your pet:</h1>
+
+<%= form_for @pet do |f| %>
+  <div class="mb-3">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :address %>
+    <%= f.text_field :address, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :species %>
+    <%= f.select :species, collection: Pet::SPECIES %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :found_on %>
+    <%= f.date_field :found_on, class:"form-control" %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
